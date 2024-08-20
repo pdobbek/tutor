@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.dll
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.eggs/
+dist/
+build/
+develop-eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pip
+.env
+venv/
+
+# Flask
+instance/
+.webassets-cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Local configuration
+local_settings.py
+
+# Test results
+.pytest_cache/
+test_results/
+
+# Sphinx documentation
+docs/_build/
+
+# Django
+*.sqlite3
+*.db
+*.db.lock
+
+# IDE files
+*.idea/
+.vscode/
+
+# Other
+*.log
+*.out
+*.txt
+*.csv
+*.xlsx
+*.zip
+*.rar
+*.7z
+*.gz
+*.tar.gz
+*.tar.bz2
+*.tar
+*.bak
+*.tmp
+*.swp
+*.swo
+*.swn
+*.suo
+*.pdb
+*.pyd
+*.dll
+*.exe
+*.msi
