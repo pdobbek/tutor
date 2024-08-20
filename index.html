@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Programming Tutor Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="banner">
+        <img src="your-image.jpg" alt="Programming Tutor"> 
+        <p>Welcome to my programming tutor service! I offer personalized one-on-one sessions to help you master any programming language or concept. Whether you're a beginner or an experienced coder, I'll tailor my approach to your specific needs and goals. Contact me today to get started!</p>
+    </div>
+
+    <div id="contact">
+        <h2>Send me a message</h2>
+        <textarea id="message" placeholder="Your message here..."></textarea>
+        <div id="captcha">
+            <p>Captcha will be enabled here</p>
+        </div>
+        <button id="sendButton" disabled>Send</button>
+    </div>
+
+    <script>
+        // Basic captcha validation (replace with a real captcha solution)
+        const captcha = document.getElementById('captcha');
+        const sendButton = document.getElementById('sendButton');
+
+        captcha.addEventListener('input', () => {
+            if (captcha.value.trim() !== '') {
+                sendButton.disabled = false;
+            } else {
+                sendButton.disabled = true;
+            }
+        });
+
+        sendButton.addEventListener('click', () => {
+            // Here you would typically send the message via email using a backend service or API
+            alert('Message sent!'); 
+        });
+    </script>
+
+</body>
+</html>
