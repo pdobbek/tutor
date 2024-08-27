@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Programming Tutor Service</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 </head>
 <body>
 
@@ -15,30 +16,22 @@
 
     <div id="contact">
         <h2>Send me a message</h2>
-        <textarea id="message" placeholder="Your message here..."></textarea>
-        <div id="captcha">
-            <p>Captcha will be enabled here</p>
-        </div>
-        <button id="sendButton" disabled>Send</button>
+        <form id="messageForm" method="post" action="/submit">
+            <input type="text" id="name" placeholder="Your name">
+            <input type="email" id="email" placeholder="Your email">
+            <input type="tel" id="phone" placeholder="Your phone number">
+
+            <div class="g-recaptcha" data-sitekey="6LfdBDAqAAAAAETy1jZynspPhfnzFTArabrmgajW" data-action="SUBMIT"></div>
+            <br/>
+            <input type="submit" id="recaptcha-submit" value="Submit">
+        </form>
     </div>
 
     <script>
-        // Basic captcha validation (replace with a real captcha solution)
-        const captcha = document.getElementById('captcha');
-        const sendButton = document.getElementById('sendButton');
-
-        captcha.addEventListener('input', () => {
-            if (captcha.value.trim() !== '') {
-                sendButton.disabled = false;
-            } else {
-                sendButton.disabled = true;
-            }
-        });
-
-        sendButton.addEventListener('click', () => {
-            // Here you would typically send the message via email using a backend service or API
-            alert('Message sent!'); 
-        });
+        function onSubmit(token) {
+            document.getElementById("messageForm").submit();
+            console.log("token:" + token)
+        } // Use `requestSubmit()` for extra features like browser input validation.
     </script>
 
 </body>
